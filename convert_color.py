@@ -4,8 +4,8 @@ import os,glob
 from os import listdir,makedirs
 
 from os.path import isfile,join
-path = '/home/mini_server/PycharmProjects/issac/bullet_test/rgb_data' # Source Folder
-dstpath = '/home/mini_server/PycharmProjects/issac/bullet_test/gray_data' # Destination Folder
+path = '/path to folder of rgb data/' # Source Folder
+dstpath = '/path to folder of result gray data/' # Destination Folder
 files = list(filter(lambda f: isfile(join(path,f)), listdir(path)))
 
 for image in files:
