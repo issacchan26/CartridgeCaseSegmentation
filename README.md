@@ -1,5 +1,5 @@
 # Cartridge Case Images Segmentation
-This repo provides segmentation model for Cartridge Case part segmentation tasks, it will segment the images into {"0": "unlabeled", "1": "breech-face", "2": "aperture-shear", "3": "firing-pin-impression", "4": "firing-pin-drag", "5": "other"}. The trained model is provided in [checkpoints folder](checkpoints).
+This repo provides segmentation model for Cartridge Case part segmentation tasks with Segformer, it will segment the images into {"0": "unlabeled", "1": "breech-face", "2": "aperture-shear", "3": "firing-pin-impression", "4": "firing-pin-drag", "5": "other"}. The trained model is provided in [checkpoints folder](checkpoints).
 ## Getting Started
 This repo is tested with Conda environment and Python 3.9 under Linux os, please run below command to install dependencies
 ```
