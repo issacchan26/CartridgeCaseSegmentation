@@ -33,9 +33,9 @@ infer_folder = '/path to/infer_query/' # path to the image folder to be inferred
 ```
 
 ## To reproduce the validation results
-1. test.py  
+1. [test.py](test.py)  
   It is used to reproduce the validation results of our fine-tuned model  
-2. infer_hf_ds.py  
+2. [infer_hf_ds.py](infer_hf_ds.py)  
   It is used to infer the dataset from Hugging Face  
 
 Please modify the below path before running  
