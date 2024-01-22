@@ -86,8 +86,8 @@ if __name__ == '__main__':
 
     args = Params(
         hf_dataset_identifier = "issacchan26/gray_bullet",
-        pretrained_model_name = '/home/mini_server/PycharmProjects/issac/bullet_test/checkpoints/best',
-        prediction_save_path = '/home/mini_server/PycharmProjects/issac/bullet_test/'
+        pretrained_model_name = '/path to/checkpoints/best',  # path to model folder
+        prediction_save_path = '/path to/prediction/', # path to saving folder
         )
 
     train_ds, original_test_ds, id2label, label2id, num_labels = get_dataset(args.hf_dataset_identifier)
