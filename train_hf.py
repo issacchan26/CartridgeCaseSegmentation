@@ -66,24 +66,6 @@ def compute_metrics(eval_pred):
         metrics.update({f"iou_{id2label[i]}": v for i, v in enumerate(per_category_iou)})
         return metrics
 
-# class CustomTrainer(Trainer):
-#     def compute_loss(self, model, inputs, return_outputs=False):
-#         labels = inputs.pop("labels")
-#         outputs = model(**inputs, labels=labels)
-#         logits = outputs.get("logits")
-#         image = inputs.get('pixel_values')
-#         height, width = image.shape[2:]
-#         dimensions = (height, width)
-#         logits = nn.functional.interpolate(
-#             logits,
-#             size=dimensions, # (height, width)
-#             mode='bilinear',
-#             align_corners=False
-#         )
-#         loss_fct = nn.CrossEntropyLoss(weight=torch.tensor([0.0, 1.0, 2.0, 1.0, 2.0, 1.0], device=model.device))
-#         loss = loss_fct(logits.view(-1, self.model.config.num_labels), labels.view(-1))
-#         return (loss, outputs) if return_outputs else loss
-
 def color_map():
     return [[0, 0, 0], [216, 82, 24], [255, 255, 0], [125, 46, 141], [118, 171, 47]]
 
@@ -101,12 +83,11 @@ def get_seg_overlay(image, seg):
 if __name__ == '__main__':
 
     hf_dataset_identifier = "issacchan26/gray_bullet"
-    # pretrained_model_name = "nvidia/mit-b0"
-    pretrained_model_name = '/home/mini_server/PycharmProjects/issac/bullet_test/segformer-b0-finetuned-bullets/checkpoint-700'
+    pretrained_model_name = "nvidia/mit-b0"
     epochs = 300
     lr = 0.0005
     batch_size = 1
-    save_dir = "/home/mini_server/PycharmProjects/issac/bullet_test/segformer-b0-finetuned-bullets"
+    save_dir = "/path to fine tuned model saving folder"
 
     # Set transforms
     train_ds, test_ds, id2label, label2id, num_labels = get_dataset(hf_dataset_identifier)
