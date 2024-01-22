@@ -193,11 +193,11 @@ if __name__ == '__main__':
 
     args = Params(
         hf_dataset_identifier = "issacchan26/gray_bullet",
-        pretrained_model_name = '/home/mini_server/PycharmProjects/issac/bullet_test/segformer-b0-finetuned-bullets/checkpoint-14700',
+        pretrained_model_name = '/path to pretrained model folder from Hugging Face', # path to Hugging Face pretrained model
         epochs = 100,
         lr = 0.0005,
         batch_size = 1,
-        checkpoints_path = "/home/mini_server/PycharmProjects/issac/bullet_test/checkpoints/"
+        checkpoints_path = "/path to/checkpoints/"  # path to checkpoints folder
         )
 
     train_ds, test_ds, id2label, label2id, num_labels = get_dataset(args.hf_dataset_identifier)
